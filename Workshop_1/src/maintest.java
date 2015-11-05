@@ -9,4 +9,8 @@ public class maintest {
     public static String test (String str){
         return str;
     }
+
+    public static int testInt(int n){
+        return n;
+    }
 }
