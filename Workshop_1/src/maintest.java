@@ -3,7 +3,10 @@
  */
 public class maintest {
     public static void main(String[] args){
+        test("hej");
+    }
 
-        System.out.println("test");
+    public static String test (String str){
+        return str;
     }
 }
