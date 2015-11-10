@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class PlayerTest {
 
     @Test
-    public void test(){
+    public void shouldAddWordToWordList(){
         Player player = new Player();
         player.guessWord('a');
         assertEquals(true, player.guessedWords.contains('a'));
