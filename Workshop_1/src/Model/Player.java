@@ -16,6 +16,6 @@ public class Player {
     }
 
     public ArrayList getGuessedWords(){
-        return null;
+        return guessedWords;
     }
 }
