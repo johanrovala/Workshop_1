@@ -12,6 +12,6 @@ public class Player {
     }
 
     public void guessWord(char letter){
-        // todo
+        guessedWords.add(letter);
     }
 }
