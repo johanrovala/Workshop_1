@@ -7,7 +7,7 @@ import java.util.InputMismatchException;
  */
 public class Game {
 
-    public Game (String chosenWord)throws InputMismatchException{
-        throw new InputMismatchException();
+    public Game (String chosenWord)throws IllegalArgumentException{
+        throw new IllegalArgumentException();
     }
 }

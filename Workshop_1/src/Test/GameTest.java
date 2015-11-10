@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class GameTest {
 
-    @Test(expected = InputMismatchException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void test(){
         new Model.Game(null);
     }
