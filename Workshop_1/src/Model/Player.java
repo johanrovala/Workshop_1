@@ -14,4 +14,8 @@ public class Player {
     public void guessWord(char letter){
         guessedWords.add(letter);
     }
+
+    public ArrayList getGuessedWords(){
+        return null;
+    }
 }

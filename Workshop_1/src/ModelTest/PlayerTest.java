@@ -2,6 +2,9 @@ package ModelTest;
 
 import Model.Player;
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 /**
@@ -14,6 +17,11 @@ public class PlayerTest {
         Player player = new Player();
         player.guessWord('a');
         assertEquals(true, player.guessedWords.contains('a'));
+    }
 
+    @Test
+    public void shouldReturnWordList(){
+        Player player = new Player();
+        assertEquals(new ArrayList(), player.getGuessedWords());
     }
 }
