@@ -11,7 +11,7 @@ import org.junit.Test;
 public class GameTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void test(){
+    public void shouldReturnIllegalArgumentException(){
         new Model.Game(null);
     }
 }
