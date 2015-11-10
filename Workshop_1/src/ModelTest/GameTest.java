@@ -1,8 +1,5 @@
-package Test;
+package ModelTest;
 
-import java.util.InputMismatchException;
-
-import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**

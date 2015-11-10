@@ -7,6 +7,7 @@ import java.util.InputMismatchException;
  */
 public class Game {
     String word;
+    char[] lettersInWord;
 
     public Game (String chosenWord)throws IllegalArgumentException{
         if (chosenWord == null)
@@ -16,6 +17,9 @@ public class Game {
         else
             {
                 word = chosenWord;
+                lettersInWord = word.toCharArray();
             }
     }
+
+
 }
