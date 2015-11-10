@@ -20,7 +20,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void shouldReturnWordList(){
+    public void shouldReturnEmptyWordList(){
         Player player = new Player();
         assertEquals(new ArrayList(), player.getGuessedWords());
     }
