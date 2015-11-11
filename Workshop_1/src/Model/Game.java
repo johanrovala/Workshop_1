@@ -40,13 +40,9 @@ public class Game {
         return check;
     }
 
-    public void removeLetter(String letter){
-        wordsLeft.remove(letter);
-    }
-
-    public void makeGuess(String letter){
+    public void checkGuessAndRemoveIfInWord(String letter){
         test_player.guessWord(letter);
-        removeLetter(letter);
+        wordsLeft.remove(letter);
     }
 
 
