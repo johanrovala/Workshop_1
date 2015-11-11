@@ -2,11 +2,11 @@ package ModelTest;
 
 import Model.Game;
 import Model.Player;
-import org.junit.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  * Created by johanrovala on 10/11/15.
@@ -31,20 +31,20 @@ public class GameTest {
     }
 
     @Test
-    public void shouldReturnFalseIfGameIsNotOverTwo(){
+    public void shouldReturnFalseIfGameIsNotOver(){
         Player player = new Player();
         Game game = new Game("jazz", player);
         game.checkGuessAndRemoveIfInWord("j");
-        assertEquals(false, game.isGameOverTwo());
+        assertEquals(false, game.isGameOver());
     }
 
     @Test
-    public void shouldReturnTrueIfGameIsOverTwo(){
+    public void shouldReturnTrueIfGameIsOver(){
         Player player = new Player();
         Game game = new Game("jazz", player);
         game.checkGuessAndRemoveIfInWord("j");
         game.checkGuessAndRemoveIfInWord("a");
         game.checkGuessAndRemoveIfInWord("z");
-        assertEquals(true, game.isGameOverTwo());
+        assertEquals(true, game.isGameOver());
     }
 }

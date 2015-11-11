@@ -25,7 +25,7 @@ public class Game {
             }
     }
 
-    public boolean isGameOverTwo(){
+    public boolean isGameOver(){
         System.out.println(wordsLeft.toString());
         return wordsLeft.isEmpty();
     }
