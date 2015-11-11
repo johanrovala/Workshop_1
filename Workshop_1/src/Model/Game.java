@@ -41,7 +41,7 @@ public class Game {
     }
 
     public boolean isGameOverTwo(){
-        return true;
+        return wordsLeft.isEmpty();
     }
 
     public void checkGuessAndRemoveIfInWord(String letter){
