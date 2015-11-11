@@ -58,10 +58,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    96%
+    95.8%
   </span>
   <span class="absValue">
-    (24/ 25)
+    (23/ 24)
   </span>
 </td>
 </tr>
@@ -76,11 +76,11 @@
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import Model.Game;
 <i>4</i>&nbsp;import Model.Player;
-<i>5</i>&nbsp;import org.junit.Test;
-<i>6</i>&nbsp;
-<i>7</i>&nbsp;import java.util.ArrayList;
-<i>8</i>&nbsp;
-<i>9</i>&nbsp;import static org.junit.Assert.*;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.util.ArrayList;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import static org.junit.Assert.*;
+<i>9</i>&nbsp;import org.junit.Test;
 <i>10</i>&nbsp;
 <i>11</i>&nbsp;/**
 <i>12</i>&nbsp; * Created by johanrovala on 10/11/15.
@@ -93,43 +93,41 @@
 <b class="nc"><i>19</i>&nbsp;    }</b>
 <i>20</i>&nbsp;
 <i>21</i>&nbsp;    @Test
-<i>22</i>&nbsp;    public void shouldReturnTrueIfGameIsOver(){
+<i>22</i>&nbsp;    public void shouldRemoveLetterFromListInGameClass(){
 <b class="fc"><i>23</i>&nbsp;        Player player = new Player();</b>
 <b class="fc"><i>24</i>&nbsp;        Game game = new Game(&quot;jazz&quot;, player);</b>
-<b class="fc"><i>25</i>&nbsp;        player.guessWord(&quot;j&quot;);</b>
-<b class="fc"><i>26</i>&nbsp;        player.guessWord(&quot;a&quot;);</b>
-<b class="fc"><i>27</i>&nbsp;        player.guessWord(&quot;z&quot;);</b>
-<i>28</i>&nbsp;        // Since the player has guessed all letters correct the game should be over
-<b class="fc"><i>29</i>&nbsp;        assertEquals(true, game.isGameOver());</b>
-<b class="fc"><i>30</i>&nbsp;    }</b>
-<i>31</i>&nbsp;
-<i>32</i>&nbsp;    @Test
-<i>33</i>&nbsp;    public void shouldReturnFalseIfGameIsNotOver(){
-<b class="fc"><i>34</i>&nbsp;        Player player = new Player();</b>
-<b class="fc"><i>35</i>&nbsp;        Game game = new Game(&quot;jazz&quot;, player);</b>
-<b class="fc"><i>36</i>&nbsp;        player.guessWord(&quot;j&quot;);</b>
-<b class="fc"><i>37</i>&nbsp;        player.guessWord(&quot;z&quot;);</b>
+<b class="fc"><i>25</i>&nbsp;        game.checkGuessAndRemoveIfInWord(&quot;j&quot;);</b>
+<b class="fc"><i>26</i>&nbsp;        ArrayList&lt;String&gt; testList = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>27</i>&nbsp;        testList.add(&quot;a&quot;);</b>
+<b class="fc"><i>28</i>&nbsp;        testList.add(&quot;z&quot;);</b>
+<b class="fc"><i>29</i>&nbsp;        testList.add(&quot;z&quot;);</b>
+<b class="fc"><i>30</i>&nbsp;        assertEquals(testList, game.wordsLeft);</b>
+<b class="fc"><i>31</i>&nbsp;    }</b>
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;    @Test
+<i>34</i>&nbsp;    public void shouldReturnFalseIfGameIsNotOver(){
+<b class="fc"><i>35</i>&nbsp;        Player player = new Player();</b>
+<b class="fc"><i>36</i>&nbsp;        Game game = new Game(&quot;jazz&quot;, player);</b>
+<b class="fc"><i>37</i>&nbsp;        game.checkGuessAndRemoveIfInWord(&quot;j&quot;);</b>
 <b class="fc"><i>38</i>&nbsp;        assertEquals(false, game.isGameOver());</b>
 <b class="fc"><i>39</i>&nbsp;    }</b>
 <i>40</i>&nbsp;
 <i>41</i>&nbsp;    @Test
-<i>42</i>&nbsp;    public void shouldRemoveLetterFromListInGameClass(){
+<i>42</i>&nbsp;    public void shouldReturnTrueIfGameIsOver(){
 <b class="fc"><i>43</i>&nbsp;        Player player = new Player();</b>
 <b class="fc"><i>44</i>&nbsp;        Game game = new Game(&quot;jazz&quot;, player);</b>
 <b class="fc"><i>45</i>&nbsp;        game.checkGuessAndRemoveIfInWord(&quot;j&quot;);</b>
-<b class="fc"><i>46</i>&nbsp;        ArrayList&lt;String&gt; testList = new ArrayList&lt;&gt;();</b>
-<b class="fc"><i>47</i>&nbsp;        testList.add(&quot;a&quot;);</b>
-<b class="fc"><i>48</i>&nbsp;        testList.add(&quot;z&quot;);</b>
-<b class="fc"><i>49</i>&nbsp;        testList.add(&quot;z&quot;);</b>
-<b class="fc"><i>50</i>&nbsp;        assertEquals(testList, game.wordsLeft);</b>
-<b class="fc"><i>51</i>&nbsp;    }</b>
-<i>52</i>&nbsp;}
+<b class="fc"><i>46</i>&nbsp;        game.checkGuessAndRemoveIfInWord(&quot;a&quot;);</b>
+<b class="fc"><i>47</i>&nbsp;        game.checkGuessAndRemoveIfInWord(&quot;z&quot;);</b>
+<b class="fc"><i>48</i>&nbsp;        assertEquals(true, game.isGameOver());</b>
+<b class="fc"><i>49</i>&nbsp;    }</b>
+<i>50</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-11-11 15:00</div>
+    <div style="float:right;">generated on 2015-11-11 15:48</div>
 </div>
 </body>
 </html>
