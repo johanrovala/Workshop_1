@@ -17,27 +17,6 @@ public class GameTest {
     public void shouldReturnIllegalArgumentException(){
         new Model.Game(null, null);
     }
-/*
-    @Test
-    public void shouldReturnTrueIfGameIsOver(){
-        Player player = new Player();
-        Game game = new Game("jazz", player);
-        player.guessWord("j");
-        player.guessWord("a");
-        player.guessWord("z");
-        // Since the player has guessed all letters correct the game should be over
-        assertEquals(true, game.isGameOver());
-    }
-
-    @Test
-    public void shouldReturnFalseIfGameIsNotOver(){
-        Player player = new Player();
-        Game game = new Game("jazz", player);
-        player.guessWord("j");
-        player.guessWord("z");
-        assertEquals(false, game.isGameOver());
-    }
-    */
 
     @Test
     public void shouldRemoveLetterFromListInGameClass(){

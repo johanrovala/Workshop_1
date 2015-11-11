@@ -24,31 +24,19 @@ public class Game {
 
             }
     }
-    /*
-    public boolean isGameOver(){
-        boolean check = false;
-        int rightAmount = 0;
-        for (int i = 0; i <= word.length()-1; i++){
-            for (int j = 0; j < test_player.getGuessedWords().size(); j++){
-                if(Character.toString(word.charAt(i)).equals(test_player.getGuessedWords().get(j))){
-                    rightAmount++;
-                }
-            }
-        }
-        if (rightAmount == word.length()){
-            check = true;
-        }
-        return check;
-    }
-    */
 
     public boolean isGameOverTwo(){
+        System.out.println(wordsLeft.toString());
         return wordsLeft.isEmpty();
     }
 
     public void checkGuessAndRemoveIfInWord(String letter){
         test_player.guessWord(letter);
-        wordsLeft.remove(letter);
+        for (int i = 0; i <= wordsLeft.size(); i++){
+            if (wordsLeft.contains(letter)){
+                wordsLeft.remove(letter);
+            }
+        }
     }
 
 
