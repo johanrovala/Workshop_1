@@ -24,6 +24,7 @@ public class Game {
 
             }
     }
+    /*
     public boolean isGameOver(){
         boolean check = false;
         int rightAmount = 0;
@@ -39,6 +40,7 @@ public class Game {
         }
         return check;
     }
+    */
 
     public boolean isGameOverTwo(){
         return wordsLeft.isEmpty();
