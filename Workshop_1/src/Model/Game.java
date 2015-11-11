@@ -41,7 +41,12 @@ public class Game {
     }
 
     public void removeLetter(String letter){
-        // todo
+        wordsLeft.remove(letter);
+    }
+
+    public void makeGuess(String letter){
+        test_player.guessWord(letter);
+        removeLetter(letter);
     }
 
 

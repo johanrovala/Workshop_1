@@ -42,7 +42,7 @@ public class GameTest {
     public void shouldRemoveLetterFromListInGameClass(){
         Player player = new Player();
         Game game = new Game("jazz", player);
-        player.guessWord("j");
+        game.makeGuess("j");
         ArrayList<String> testList = new ArrayList<>();
         testList.add("a");
         testList.add("z");
