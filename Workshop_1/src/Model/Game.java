@@ -40,6 +40,10 @@ public class Game {
         return check;
     }
 
+    public boolean isGameOverTwo(){
+        return true;
+    }
+
     public void checkGuessAndRemoveIfInWord(String letter){
         test_player.guessWord(letter);
         wordsLeft.remove(letter);

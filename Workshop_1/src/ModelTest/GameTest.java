@@ -49,4 +49,12 @@ public class GameTest {
         testList.add("z");
         assertEquals(testList, game.wordsLeft);
     }
+
+    @Test
+    public void shouldReturnFalseIfGameIsNotOverTwo(){
+        Player player = new Player();
+        Game game = new Game("jazz", player);
+        game.checkGuessAndRemoveIfInWord("j");
+        assertEquals(false, game.isGameOverTwo());
+    }
 }
