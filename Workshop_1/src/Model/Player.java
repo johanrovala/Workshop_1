@@ -6,12 +6,12 @@ import java.util.ArrayList;
  * Created by johanrovala on 10/11/15.
  */
 public class Player {
-    public ArrayList guessedWords;
+    public ArrayList<String> guessedWords;
     public Player (){
         guessedWords = new ArrayList();
     }
 
-    public void guessWord(char letter){
+    public void guessWord(String letter){
         guessedWords.add(letter);
     }
 

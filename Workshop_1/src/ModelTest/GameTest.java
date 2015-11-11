@@ -16,12 +16,13 @@ public class GameTest {
     }
 
     @Test
-    public void shouldReturnTrueIfGameIsStillRunning(){
+    public void shouldReturnTrueIfGameIsOver(){
         Player player = new Player();
         Game game = new Game("jazz", player);
-        player.guessWord('j');
-        player.guessWord('a');
-        // Player still hasn't guessed letter z so game should still be playing
+        player.guessWord("j");
+        player.guessWord("a");
+        player.guessWord("z");
+        // Since the player has guessed all letters correct the game should be over
         assertEquals(true, game.isGameOver());
     }
 }

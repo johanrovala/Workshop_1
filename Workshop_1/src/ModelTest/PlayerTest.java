@@ -15,7 +15,7 @@ public class PlayerTest {
     @Test
     public void shouldAddWordToWordList(){
         Player player = new Player();
-        player.guessWord('a');
+        player.guessWord("a");
         assertEquals(true, player.guessedWords.contains('a'));
     }
 
