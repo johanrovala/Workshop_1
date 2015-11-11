@@ -8,13 +8,17 @@ import java.util.InputMismatchException;
 public class Game {
     String word;
 
-    public Game (String chosenWord)throws IllegalArgumentException{
-        if (chosenWord == null) {
+    public Game (String chosenWord, Player m_player)throws IllegalArgumentException{
+        if (chosenWord == null || m_player == null){
                 throw new IllegalArgumentException();
-            }
-        else {
+            } else{
                 word = chosenWord;
             }
+    }
+
+    public boolean isGameOver(){
+        // todo
+        return false;
     }
 
 
