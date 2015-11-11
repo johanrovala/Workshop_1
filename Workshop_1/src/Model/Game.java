@@ -19,19 +19,19 @@ public class Game {
     }
 
     public boolean isGameOver(){
-        boolean test = false;
-        int test2 = 0;
+        boolean check = false;
+        int rightAmount = 0;
         for (int i = 0; i <= word.length()-1; i++){
             for (int j = 0; j < test_player.getGuessedWords().size(); j++){
                 if(Character.toString(word.charAt(i)).equals(test_player.getGuessedWords().get(j))){
-                    test2++;
+                    rightAmount++;
                 }
             }
         }
-        if (test2 == word.length()){
-            test = true;
+        if (rightAmount == word.length()){
+            check = true;
         }
-        return test;
+        return check;
     }
 
 
