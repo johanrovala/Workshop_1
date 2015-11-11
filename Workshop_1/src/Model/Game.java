@@ -1,6 +1,7 @@
 package Model;
 
-import java.util.InputMismatchException;
+
+import java.util.ArrayList;
 
 /**
  * Created by johanrovala on 10/11/15.
@@ -8,6 +9,7 @@ import java.util.InputMismatchException;
 public class Game {
     String word;
     Player test_player;
+    public ArrayList<String> wordsLeft;
 
     public Game (String chosenWord, Player m_player)throws IllegalArgumentException{
         if (chosenWord == null || m_player == null){
@@ -15,9 +17,13 @@ public class Game {
             } else{
                 word = chosenWord;
                 test_player = m_player;
+                wordsLeft = new ArrayList<>();
+                for (int i = 0; i < word.length(); i++){
+                    wordsLeft.add(Character.toString(word.charAt(i)));
+                }
+
             }
     }
-
     public boolean isGameOver(){
         boolean check = false;
         int rightAmount = 0;
@@ -32,6 +38,10 @@ public class Game {
             check = true;
         }
         return check;
+    }
+
+    public void removeLetter(String letter){
+        // todo
     }
 
 
