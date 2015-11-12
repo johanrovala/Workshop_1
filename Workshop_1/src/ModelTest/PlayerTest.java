@@ -1,5 +1,6 @@
 package ModelTest;
 
+import Model.Game;
 import Model.Player;
 import org.junit.Test;
 
@@ -12,6 +13,7 @@ import static org.junit.Assert.*;
  */
 public class PlayerTest {
 
+
     @Test
     public void shouldAddWordToWordList(){
         Player player = new Player();
@@ -23,5 +25,15 @@ public class PlayerTest {
     public void shouldReturnEmptyWordList(){
         Player player = new Player();
         assertEquals(new ArrayList(), player.getGuessedWords());
+    }
+
+    @Test
+    public void shouldReturnTheAmountOfTurns(){
+        Player player = new Player();
+        Game game = new Game("jazz", player);
+        player.guessWord("j"); // 1
+        player.guessWord("k"); // 2
+        player.guessWord("m"); // 3
+        assertEquals(3, player.getAmountOfTurns());
     }
 }

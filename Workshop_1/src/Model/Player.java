@@ -9,6 +9,7 @@ public class Player {
 
 
     public ArrayList<String> guessedWords;
+    int amountOfTurns;
 
 
     public Player (){
@@ -21,5 +22,9 @@ public class Player {
 
     public ArrayList getGuessedWords(){
         return guessedWords;
+    }
+
+    public int getAmountOfTurns(){
+        return 0;
     }
 }
