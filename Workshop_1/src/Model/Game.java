@@ -26,7 +26,7 @@ public class Game {
     }
 
     public boolean isGameOver(){
-        return wordsLeft.isEmpty();
+        return wordsLeft.isEmpty() || test_player.getAmountOfTurns() >= 10;
     }
 
     public void checkGuessAndRemoveIfInWord(String letter){

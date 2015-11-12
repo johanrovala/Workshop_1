@@ -1,6 +1,5 @@
 package ModelTest;
 
-import Model.Game;
 import Model.Player;
 import org.junit.Test;
 
@@ -30,7 +29,6 @@ public class PlayerTest {
     @Test
     public void shouldReturnTheAmountOfTurns(){
         Player player = new Player();
-        Game game = new Game("jazz", player);
         player.guessWord("j"); // 1
         player.guessWord("k"); // 2
         player.guessWord("m"); // 3
