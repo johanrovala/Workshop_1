@@ -12,8 +12,10 @@ public class Controller {
     Player m_player;
 
     public Controller(Game game, Player player) throws IllegalArgumentException{
-        throw new IllegalArgumentException();
-      //  m_game = game;
-      //  m_player = player;
+        if (game == null || player == null){
+            throw new IllegalArgumentException();
+        }
+        m_game = game;
+        m_player = player;
     }
 }

@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class ControllerTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void test(){
+    public void shouldThrowIllegalArgumentException(){
         new Controller(null, null);
     }
 
