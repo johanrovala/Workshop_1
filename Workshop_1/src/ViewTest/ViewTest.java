@@ -1,9 +1,11 @@
 package ViewTest;
 
 import View.View;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
@@ -14,17 +16,33 @@ import static org.junit.Assert.*;
  */
 public class ViewTest {
 
+
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
     @Before
-    public void setUpStream(){
+    public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
+        System.setErr(new PrintStream(errContent));
     }
 
-    @Test
-    public void shouldDisplayExpectedWelcomeMessage(){
-       View view = new View();
-       assertEquals("Welcome to my shitty version of Hangman. /n Press 'P' to start playing or 'Q' to get out", outContent.toString());
+    @After
+    public void cleanUpStreams() {
+        System.setOut(null);
+        System.setErr(null);
     }
+
+
+    @Test
+    public void out(){
+        View view = new View();
+        view.displayWelcomeMessage();
+        assertEquals("Welcome to my shitty version of Hangman. /n Press 'P' to start playing or 'Q' to get out", outContent.toString());
+       //View view = new View();
+       //view.displayWelcomeMessage();
+       // System.out.println("Welcome to my shitty version of Hangman. /n Press 'P' to start playing or 'Q' to get out");
+      //  assertEquals("Welcome to my shitty version of Hangman. /n Press 'P' to start playing or 'Q' to get out", outContent.toString());
+    }
+
 
 }
