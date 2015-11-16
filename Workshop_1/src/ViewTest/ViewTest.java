@@ -63,7 +63,7 @@ public class ViewTest {
      */
 
     @Test
-    public void shouldReturnTheUserInput(){
+    public void shouldReturnTheUserInputIfGetUserMenuInputMethodWorks(){
         String testData = "1";
         View view = new View();
         view.getUserMenuInput(testData);
