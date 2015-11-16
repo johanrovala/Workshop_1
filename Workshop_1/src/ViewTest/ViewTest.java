@@ -3,11 +3,11 @@ package ViewTest;
 import Model.Game;
 import Model.Player;
 import View.View;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -57,5 +57,13 @@ public class ViewTest {
         assertEquals(test.toString(), outContent.toString());
     }
 
+    @Test
+    public void shouldReturnUserMenuInput(){
+        String testData = "P";
+        View view = new View();
+        view.getUserMenuInput(testData);
+        view.returnUserMenuChoice();
+        assertEquals(testData, outContent.toString());
+    }
 
 }
