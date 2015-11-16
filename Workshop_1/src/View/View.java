@@ -29,7 +29,6 @@ public class View {
             System.setIn(new ByteArrayInputStream(testData.getBytes()));
             Scanner scanner = new Scanner(System.in);
             System.out.print(scanner.nextLine());
-          //  System.out.println(scanner.nextLine());
         }finally {
             System.setIn(systemIn);
         }

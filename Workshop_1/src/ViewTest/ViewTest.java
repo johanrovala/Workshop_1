@@ -57,18 +57,25 @@ public class ViewTest {
         assertEquals(test.toString(), outContent.toString());
     }
 
+    /*
+        The following test used dummy data in order to make sure that the user input method is working.
+        Actual implementation will change later.
+     */
+
     @Test
-    public void shouldReturnUserMenuInput(){
+    public void shouldReturnTheUserInput(){
         String testData = "1";
         View view = new View();
         view.getUserMenuInput(testData);
-        String test1 = outContent.toString();
-        //System.out.println(outContent.toString());
-       // view.returnUserMenuChoice();
-        assertEquals(testData, outContent.toString());
+        assertEquals(view.returnUserMenuChoice(), outContent.toString());
+    }
+
+    @Test
+    public void shouldReturnErrorMessageWhenGivenBadUserInput(){
+        View view = new View();
         String testData2 = "K";
         view.getUserMenuInput(testData2);
-        assertNotEquals(outContent.toString(), testData2);
+        assertNotEquals(outContent.toString(), view.returnUserMenuChoice());
     }
 
 }
