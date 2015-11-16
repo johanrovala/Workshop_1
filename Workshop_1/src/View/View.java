@@ -20,7 +20,7 @@ public class View {
     private InputStream systemIn;
 
     public void displayWelcomeMessage(){
-        System.out.print("Welcome to my shitty version of Hangman. /n Press 'P' to start playing or 'Q' to get out");
+        System.out.print("Welcome to my shitty version of Hangman. /n Press '1' to start playing or '2' to get out");
     }
 
     public void getUserMenuInput(String testData){
@@ -28,14 +28,18 @@ public class View {
         try{
             System.setIn(new ByteArrayInputStream(testData.getBytes()));
             Scanner scanner = new Scanner(System.in);
-            System.out.println(scanner.nextLine());
+            System.out.print(scanner.nextLine());
+          //  System.out.println(scanner.nextLine());
         }finally {
             System.setIn(systemIn);
         }
     }
 
     public String returnUserMenuChoice(){
-        return userMenuChoice;
+        if(userMenuChoice == "1" || userMenuChoice == "2"){
+            return userMenuChoice;
+        }
+        return "sry";
     }
 
     public void displayWordsLeft(Game game){

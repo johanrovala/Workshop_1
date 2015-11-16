@@ -40,7 +40,7 @@ public class ViewTest {
     public void shouldDisplayTheCorrectWelcomeMessage(){
         View view = new View();
         view.displayWelcomeMessage();
-        assertEquals("Welcome to my shitty version of Hangman. /n Press 'P' to start playing or 'Q' to get out", outContent.toString());
+        assertEquals("Welcome to my shitty version of Hangman. /n Press '1' to start playing or '2' to get out", outContent.toString());
     }
 
     @Test
@@ -59,11 +59,16 @@ public class ViewTest {
 
     @Test
     public void shouldReturnUserMenuInput(){
-        String testData = "P";
+        String testData = "1";
         View view = new View();
         view.getUserMenuInput(testData);
-        view.returnUserMenuChoice();
+        String test1 = outContent.toString();
+        //System.out.println(outContent.toString());
+       // view.returnUserMenuChoice();
         assertEquals(testData, outContent.toString());
+        String testData2 = "K";
+        view.getUserMenuInput(testData2);
+        assertNotEquals(outContent.toString(), testData2);
     }
 
 }
