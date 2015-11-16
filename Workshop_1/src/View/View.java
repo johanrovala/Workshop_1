@@ -38,7 +38,7 @@ public class View {
         return userMenuChoice;
     }
 
-    public void displayCorrectWords(Game game){
+    public void displayWordsLeft(Game game){
         System.out.print(game.wordsLeft.toString());
     }
 

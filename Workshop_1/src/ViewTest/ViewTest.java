@@ -44,7 +44,7 @@ public class ViewTest {
     }
 
     @Test
-    public void shouldReturnCurrentHangman(){
+    public void shouldDisplayWordsLeft(){
         Player player = new Player();
         Game game = new Game("jazz", player);
         View view = new View();
@@ -53,7 +53,7 @@ public class ViewTest {
         test.add("a");
         test.add("z");
         test.add("z");
-        view.displayCorrectWords(game);
+        view.displayWordsLeft(game);
         assertEquals(test.toString(), outContent.toString());
     }
 
