@@ -10,6 +10,7 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -48,9 +49,12 @@ public class ViewTest {
         Game game = new Game("jazz", player);
         View view = new View();
         game.checkGuessAndRemoveIfInWord("j");
-        String test = "j";
-        view.displayCorrectWords();
-        assertEquals(test, outContent.toString());
+        ArrayList<String> test = new ArrayList<>();
+        test.add("a");
+        test.add("z");
+        test.add("z");
+        view.displayCorrectWords(game);
+        assertEquals(test.toString(), outContent.toString());
     }
 
 

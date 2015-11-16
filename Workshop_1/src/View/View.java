@@ -1,5 +1,8 @@
 package View;
 
+import Model.Game;
+import Model.Player;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -35,8 +38,8 @@ public class View {
         return userMenuChoice;
     }
 
-    public void displayCorrectWords(){
-        System.out.print(viewCorrectWords);
+    public void displayCorrectWords(Game game){
+        System.out.print(game.wordsLeft.toString());
     }
 
 
