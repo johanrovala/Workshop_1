@@ -75,7 +75,7 @@ public class ViewTest {
         View view = new View();
         String testData2 = "K";
         view.getUserMenuInput(testData2);
-        assertNotEquals("sry", view.returnUserMenuChoice());
+        assertNotEquals(outContent.toString(), view.returnUserMenuChoice());
     }
 
 }

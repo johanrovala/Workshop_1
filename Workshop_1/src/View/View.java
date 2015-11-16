@@ -28,6 +28,7 @@ public class View {
         try{
             System.setIn(new ByteArrayInputStream(testData.getBytes()));
             Scanner scanner = new Scanner(System.in);
+            userMenuChoice = testData;
             System.out.print(scanner.nextLine());
         }finally {
             System.setIn(systemIn);
