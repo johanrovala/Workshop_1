@@ -43,6 +43,11 @@ public class View {
     }
 
     public void displayNumberOfWordsLeft(Game game){
+        String toPrint = "";
+        for (int i = 0; i < game.wordsLeft.size(); i++){
+            toPrint += "_ ";
+        }
+        System.out.print(toPrint);
     }
 
 

@@ -75,8 +75,9 @@ public class ViewTest {
         Game game = new Game("jazz", player);
         View view = new View();
         game.checkGuessAndRemoveIfInWord("j");
+        game.checkGuessAndRemoveIfInWord("a");
         view.displayNumberOfWordsLeft(game);
-        assertEquals("_ _ _", outContent.toString());
+        assertEquals("_ _ ", outContent.toString());
     }
 
 }
