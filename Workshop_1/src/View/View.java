@@ -9,6 +9,7 @@ import java.util.Scanner;
 /**
  * Created by johanrovala on 10/11/15.
  */
+
 public class View {
 
     String userMenuChoice;
@@ -60,10 +61,6 @@ public class View {
             System.setIn(systemIn);
         }
     }
-
-    /*
-        Just for testing purposes
-     */
 
     public String returnUserGuess(){
         return userGuess;

@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Game;
 import Model.Player;
+import View.View;
 
 
 /**
@@ -10,13 +11,15 @@ import Model.Player;
 public class Controller {
     Game m_game;
     Player m_player;
+    View m_view;
 
-    public Controller(Game game, Player player) throws IllegalArgumentException{
-        if (game == null || player == null){
+    public Controller(Game game, Player player, View view) throws IllegalArgumentException{
+        if (game == null || player == null || view == null){
             throw new IllegalArgumentException();
         }
         m_game = game;
         m_player = player;
+        m_view = view;
     }
 
 

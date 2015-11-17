@@ -4,35 +4,35 @@ import Model.Game;
 import Model.Player;
 import View.View;
 
+import mockit.integration.junit4.JMockit;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
 
-import static org.junit.Assert.*;
 
 /**
  * Created by johanrovala on 12/11/15.
  */
+@RunWith(JMockit.class)
 public class ViewTest {
 
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
     }
 
     @After
     public void cleanUpStreams() {
         System.setOut(null);
-        System.setErr(null);
     }
 
 
@@ -87,5 +87,4 @@ public class ViewTest {
         view.getUserGuessInput(testData3);
         assertEquals(outContent.toString(), view.returnUserGuess());
     }
-
 }
