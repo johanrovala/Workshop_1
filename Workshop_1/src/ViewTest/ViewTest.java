@@ -80,4 +80,12 @@ public class ViewTest {
         assertEquals("_ _ ", outContent.toString());
     }
 
+    @Test
+    public void shouldTestIfUserGuessInputAndScannerWorksCorrectly(){
+        View view = new View();
+        String testData3 = "j";
+        view.getUserGuessInput(testData3);
+        assertEquals(outContent.toString(), view.returnUserGuess());
+    }
+
 }

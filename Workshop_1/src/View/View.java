@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class View {
 
     String userMenuChoice;
+    String userGuess;
 
     // Merely for testing purposes
 
@@ -46,6 +47,26 @@ public class View {
             toPrint += "_ ";
         }
         System.out.print(toPrint);
+    }
+
+    public void getUserGuessInput(String testData){
+        systemIn = System.in;
+        try{
+            System.setIn(new ByteArrayInputStream(testData.getBytes()));
+            Scanner scanner = new Scanner(System.in);
+            userGuess = testData;
+            System.out.print(scanner.nextLine());
+        }finally {
+            System.setIn(systemIn);
+        }
+    }
+
+    /*
+        Just for testing purposes
+     */
+
+    public String returnUserGuess(){
+        return userGuess;
     }
 
 
