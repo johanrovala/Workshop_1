@@ -1,7 +1,6 @@
 package View;
 
 import Model.Game;
-import Model.Player;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -13,7 +12,6 @@ import java.util.Scanner;
 public class View {
 
     String userMenuChoice;
-    String viewCorrectWords;
 
     // Merely for testing purposes
 
