@@ -42,8 +42,7 @@ public class View {
         return "sry";
     }
 
-    public void displayWordsLeft(Game game){
-        System.out.print(game.wordsLeft.toString());
+    public void displayNumberOfWordsLeft(Game game){
     }
 
 

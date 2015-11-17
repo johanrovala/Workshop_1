@@ -43,19 +43,6 @@ public class ViewTest {
         assertEquals("Welcome to my shitty version of Hangman. /n Press '1' to start playing or '2' to get out", outContent.toString());
     }
 
-    @Test
-    public void shouldDisplayWordsLeft(){
-        Player player = new Player();
-        Game game = new Game("jazz", player);
-        View view = new View();
-        game.checkGuessAndRemoveIfInWord("j");
-        ArrayList<String> test = new ArrayList<>();
-        test.add("a");
-        test.add("z");
-        test.add("z");
-        view.displayWordsLeft(game);
-        assertEquals(test.toString(), outContent.toString());
-    }
 
     /*
         The following test used dummy data in order to make sure that the user input method is working.
@@ -76,6 +63,20 @@ public class ViewTest {
         String testData2 = "K";
         view.getUserMenuInput(testData2);
         assertNotEquals(outContent.toString(), view.returnUserMenuChoice());
+    }
+
+    /*
+        End of earlier statement
+     */
+
+    @Test
+    public void shouldReturnTheNumberOfWordsThatAreLeftWithEmptyUnderscores(){
+        Player player = new Player();
+        Game game = new Game("jazz", player);
+        View view = new View();
+        game.checkGuessAndRemoveIfInWord("j");
+        view.displayNumberOfWordsLeft(game);
+        assertEquals("_ _ _", outContent.toString());
     }
 
 }
