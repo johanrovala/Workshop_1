@@ -8,6 +8,7 @@ import View.View;
 /**
  * Created by johanrovala on 11/11/15.
  */
+
 public class Controller {
     Game m_game;
     Player m_player;
@@ -21,6 +22,15 @@ public class Controller {
         m_player = player;
         m_view = view;
     }
+
+    public void getGuessedWordAndCallModel(){
+        m_game.checkGuessAndRemoveIfInWord(m_view.returnUserGuess());
+    }
+
+    public boolean isGameOver(){
+        return m_game.isGameOver();
+    }
+
 
 
 }
