@@ -10,13 +10,9 @@ import static org.mockito.Mockito.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-
 import static org.junit.Assert.*;
 
 import java.io.*;
-import java.util.List;
 
 
 /**
@@ -45,7 +41,6 @@ public class ViewTest {
         View view = new View(printer);
         view.displayWelcomeMessage();
         verify(printer, times(1)).println("Welcome to my shitty version of Hangman. /n Press '1' to start playing or '2' to get out");
-       // assertEquals("Welcome to my shitty version of Hangman. /n Press '1' to start playing or '2' to get out", outContent.toString());
     }
 
 
@@ -59,7 +54,7 @@ public class ViewTest {
         String testData = "1";
         View view = new View(printer);
         view.getUserMenuInput(testData);
-        assertEquals(view.returnUserMenuChoice(), outContent.toString());
+        verify(printer, times(1)).println(view.returnUserMenuChoice());
     }
 
     @Test
@@ -83,7 +78,6 @@ public class ViewTest {
         game.checkGuessAndRemoveIfInWord("a");
         view.displayNumberOfWordsLeft(game);
         verify(printer, times(1)).println("_ _ ");
-       // assertEquals("_ _ ", outContent.toString());
     }
 
     @Test
@@ -91,7 +85,7 @@ public class ViewTest {
         View view = new View(printer);
         String testData3 = "j";
         view.getUserGuessInput(testData3);
-        assertEquals(outContent.toString(), view.returnUserGuess());
+        verify(printer, times(1)).println(view.returnUserGuess());
     }
 
     @Test

@@ -34,7 +34,7 @@ public class View {
             System.setIn(new ByteArrayInputStream(testData.getBytes()));
             Scanner scanner = new Scanner(System.in);
             userMenuChoice = testData;
-            System.out.print(scanner.nextLine());
+            printer.println(scanner.nextLine());
         }finally {
             System.setIn(systemIn);
         }
@@ -69,7 +69,7 @@ public class View {
             System.setIn(new ByteArrayInputStream(testData.getBytes()));
             Scanner scanner = new Scanner(System.in);
             userGuess = testData;
-            System.out.print(scanner.nextLine());
+            printer.println(scanner.nextLine());
         }finally {
             System.setIn(systemIn);
         }
