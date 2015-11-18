@@ -82,7 +82,8 @@ public class ViewTest {
         game.checkGuessAndRemoveIfInWord("j");
         game.checkGuessAndRemoveIfInWord("a");
         view.displayNumberOfWordsLeft(game);
-        assertEquals("_ _ ", outContent.toString());
+        verify(printer, times(1)).println("_ _ ");
+       // assertEquals("_ _ ", outContent.toString());
     }
 
     @Test
