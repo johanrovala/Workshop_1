@@ -21,7 +21,6 @@ public class Game {
                 for (int i = 0; i < word.length(); i++){
                     wordsLeft.add(Character.toString(word.charAt(i)));
                 }
-
             }
     }
 

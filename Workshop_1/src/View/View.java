@@ -14,13 +14,18 @@ public class View {
 
     String userMenuChoice;
     String userGuess;
-
+    String userWord;
+    Printer printer;
     // Merely for testing purposes
+
+    public View (Printer printer){
+        this.printer = printer;
+    }
 
     private InputStream systemIn;
 
     public void displayWelcomeMessage(){
-        System.out.print("Welcome to my shitty version of Hangman. /n Press '1' to start playing or '2' to get out");
+        printer.println("Welcome to my shitty version of Hangman. /n Press '1' to start playing or '2' to get out");
     }
 
     public void getUserMenuInput(String testData){
@@ -35,6 +40,14 @@ public class View {
         }
     }
 
+    public void setUserWord(String string){
+        userWord = string;
+    }
+
+    public String getUserWord(){
+        return userWord;
+    }
+
     public String returnUserMenuChoice(){
         if(userMenuChoice == "1" || userMenuChoice == "2"){
             return userMenuChoice;
@@ -47,7 +60,7 @@ public class View {
         for (int i = 0; i < game.wordsLeft.size(); i++){
             toPrint += "_ ";
         }
-        System.out.print(toPrint);
+        printer.println(toPrint);
     }
 
     public void getUserGuessInput(String testData){
