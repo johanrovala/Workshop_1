@@ -53,15 +53,15 @@
     100%
   </span>
   <span class="absValue">
-    (2/ 2)
+    (4/ 4)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    66.7%
+    92.3%
   </span>
   <span class="absValue">
-    (2/ 3)
+    (12/ 13)
   </span>
 </td>
 </tr>
@@ -75,27 +75,56 @@
 <div class="sourceCode"><i>1</i>&nbsp;package ControllerTest;
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import Controller.Controller;
-<i>4</i>&nbsp;import org.junit.Test;
-<i>5</i>&nbsp;
-<i>6</i>&nbsp;import static org.junit.Assert.*;
+<i>4</i>&nbsp;import Model.Game;
+<i>5</i>&nbsp;import Model.Player;
+<i>6</i>&nbsp;import View.View;
 <i>7</i>&nbsp;
-<i>8</i>&nbsp;/**
-<i>9</i>&nbsp; * Created by johanrovala on 12/11/15.
-<i>10</i>&nbsp; */
-<b class="fc"><i>11</i>&nbsp;public class ControllerTest {</b>
+<i>8</i>&nbsp;import static org.mockito.Mockito.*;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;import org.junit.Before;
+<i>11</i>&nbsp;import org.junit.Test;
 <i>12</i>&nbsp;
-<i>13</i>&nbsp;    @Test(expected = IllegalArgumentException.class)
-<i>14</i>&nbsp;    public void shouldThrowIllegalArgumentException(){
-<b class="fc"><i>15</i>&nbsp;        new Controller(null, null);</b>
-<b class="nc"><i>16</i>&nbsp;    }</b>
-<i>17</i>&nbsp;
-<i>18</i>&nbsp;}
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;/**
+<i>16</i>&nbsp; * Created by johanrovala on 12/11/15.
+<i>17</i>&nbsp; */
+<b class="fc"><i>18</i>&nbsp;public class ControllerTest {</b>
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    Player mockPlayer;
+<i>21</i>&nbsp;    Game mockGame;
+<i>22</i>&nbsp;    View mockView;
+<i>23</i>&nbsp;    Controller testController;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    @Before
+<i>26</i>&nbsp;    public void setUpShit(){
+<b class="fc"><i>27</i>&nbsp;        mockPlayer = mock(Player.class);</b>
+<b class="fc"><i>28</i>&nbsp;        mockGame = mock(Game.class);</b>
+<b class="fc"><i>29</i>&nbsp;        mockView = mock(View.class);</b>
+<b class="fc"><i>30</i>&nbsp;    }</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    @Test(expected = IllegalArgumentException.class)
+<i>33</i>&nbsp;    public void shouldThrowIllegalArgumentException(){
+<b class="fc"><i>34</i>&nbsp;        new Controller(null, null, null);</b>
+<b class="nc"><i>35</i>&nbsp;    }</b>
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;    @Test
+<i>38</i>&nbsp;    public void shouldCallMethodInGameAndViewOnce(){
+<b class="fc"><i>39</i>&nbsp;        testController = new Controller(mockGame, mockPlayer, mockView);</b>
+<b class="fc"><i>40</i>&nbsp;        mockGame.checkGuessAndRemoveIfInWord(&quot;j&quot;);</b>
+<b class="fc"><i>41</i>&nbsp;        testController.getGuessedWordAndCallModel();</b>
+<b class="fc"><i>42</i>&nbsp;        verify(mockGame, times(1)).checkGuessAndRemoveIfInWord(&quot;j&quot;);</b>
+<b class="fc"><i>43</i>&nbsp;        verify(mockView, times(1)).returnUserGuess();</b>
+<b class="fc"><i>44</i>&nbsp;    }</b>
+<i>45</i>&nbsp;    
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-11-12 13:46</div>
+    <div style="float:right;">generated on 2015-11-23 13:38</div>
 </div>
 </body>
 </html>

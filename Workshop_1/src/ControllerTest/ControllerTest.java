@@ -1,12 +1,12 @@
 package ControllerTest;
 
 import Controller.Controller;
-
-import static org.mockito.Mockito.*;
-
 import Model.Game;
 import Model.Player;
 import View.View;
+
+import static org.mockito.Mockito.*;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,6 +20,7 @@ public class ControllerTest {
     Player mockPlayer;
     Game mockGame;
     View mockView;
+    Controller testController;
 
     @Before
     public void setUpShit(){
@@ -35,11 +36,12 @@ public class ControllerTest {
 
     @Test
     public void shouldCallMethodInGameAndViewOnce(){
-        Controller controller = new Controller(mockGame, mockPlayer, mockView);
+        testController = new Controller(mockGame, mockPlayer, mockView);
         mockGame.checkGuessAndRemoveIfInWord("j");
-        controller.getGuessedWordAndCallModel();
+        testController.getGuessedWordAndCallModel();
         verify(mockGame, times(1)).checkGuessAndRemoveIfInWord("j");
         verify(mockView, times(1)).returnUserGuess();
     }
+    
 
 }
