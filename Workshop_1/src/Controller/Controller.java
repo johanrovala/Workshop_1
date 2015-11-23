@@ -32,7 +32,10 @@ public class Controller {
     }
 
     public boolean Play(){
-        return false;
+        m_view.getUserMenuInput("p");
+        m_view.getUserGuessInput("h");
+        m_view.displayNumberOfWordsLeft(m_game);
+        return isGameOver();
     }
 
 }

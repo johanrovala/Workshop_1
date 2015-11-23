@@ -38,6 +38,10 @@ public class View {
         }finally {
             System.setIn(systemIn);
         }
+        /*
+        Scanner scanner = new Scanner(System.in);
+        userGuess = scanner.next();
+         */
     }
 
     public void setUserWord(String string){
@@ -73,6 +77,10 @@ public class View {
         }finally {
             System.setIn(systemIn);
         }
+        /*
+        Scanner scanner = new Scanner(System.in);
+        userGuess = scanner.next();
+        */
     }
 
     public String returnUserGuess(){

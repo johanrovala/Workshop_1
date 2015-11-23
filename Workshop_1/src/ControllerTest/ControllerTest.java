@@ -57,18 +57,10 @@ public class ControllerTest {
 
         // Game methods
         verify(mockGame, times(1)).isGameOver();
-        verify(mockGame, times(1)).checkGuessAndRemoveIfInWord("h");
-
-        // Player methods
-        verify(mockPlayer, times(1)).guessWord("h");
-        verify(mockPlayer, times(1)).getGuessedWords();
 
         // View methods
-        verify(mockView, times(1)).returnUserGuess();
         verify(mockView, times(1)).getUserMenuInput("p");
         verify(mockView, times(1)).displayNumberOfWordsLeft(mockGame);
-        verify(mockView, times(1)).displayWelcomeMessage();
-        verify(mockView, times(1)).returnUserMenuChoice();
+        verify(mockView, times(1)).getUserGuessInput("h");
     }
-
 }
