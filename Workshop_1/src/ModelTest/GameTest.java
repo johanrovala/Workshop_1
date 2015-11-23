@@ -3,7 +3,6 @@ package ModelTest;
 import Model.Game;
 import Model.Player;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
