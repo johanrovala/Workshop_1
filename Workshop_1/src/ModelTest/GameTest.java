@@ -39,7 +39,6 @@ public class GameTest {
         arrayList.add("a");
         arrayList.add("z");
         arrayList.add("z");
-      //  System.out.println(arrayList.size());
         assertEquals(arrayList.size(), game.wordsLeft.size());
     }
 
@@ -58,6 +57,16 @@ public class GameTest {
         game.checkGuessAndRemoveIfInWord("j");
         game.checkGuessAndRemoveIfInWord("a");
         game.checkGuessAndRemoveIfInWord("z");
+        assertEquals(true, game.isGameOver());
+    }
+
+    @Test
+    public void shouldReturnTrueIfPlayerHasHadMoreThan10Tries(){
+        Player player = new Player();
+        Game game = new Game("jazz", player);
+        for (int i = 0; i < 9; i++){
+            game.checkGuessAndRemoveIfInWord("h");
+        }
         assertEquals(true, game.isGameOver());
     }
 }
