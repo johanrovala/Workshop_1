@@ -61,7 +61,7 @@ public class GameTest {
     }
 
     @Test
-    public void shouldReturnTrueIfPlayerHasHadMoreThan10Tries(){
+    public void shouldReturnTrueIfPlayerHasHad10Tries(){
         Player player = new Player();
         Game game = new Game("jazz", player);
         for (int i = 0; i <= 10; i++){
