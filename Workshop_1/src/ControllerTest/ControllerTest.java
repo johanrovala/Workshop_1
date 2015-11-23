@@ -44,7 +44,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void test(){
+    public void ShouldCalldIsGameOverOnce(){
         testController = new Controller(mockGame, mockPlayer, mockView);
         testController.isGameOver();
         verify(mockGame, times(1)).isGameOver();
