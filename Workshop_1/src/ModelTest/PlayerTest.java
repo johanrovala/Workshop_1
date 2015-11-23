@@ -1,7 +1,11 @@
 package ModelTest;
 
 import Model.Player;
+
+import org.junit.Before;
 import org.junit.Test;
+
+import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 
@@ -11,7 +15,12 @@ import static org.junit.Assert.*;
  * Created by johanrovala on 10/11/15.
  */
 public class PlayerTest {
+    ArrayList arrayList;
 
+    @Before
+    public void setUpMock(){
+        arrayList = mock(ArrayList.class);
+    }
 
     @Test
     public void shouldAddWordToWordList(){
@@ -23,7 +32,7 @@ public class PlayerTest {
     @Test
     public void shouldReturnEmptyWordList(){
         Player player = new Player();
-        assertEquals(new ArrayList(), player.getGuessedWords());
+        assertEquals(arrayList.size(), player.getGuessedWords().size());
     }
 
     @Test

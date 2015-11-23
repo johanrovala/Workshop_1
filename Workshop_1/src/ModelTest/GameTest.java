@@ -3,15 +3,27 @@ package ModelTest;
 import Model.Game;
 import Model.Player;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
+
+import static org.mockito.Mockito.*;
+
+import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Created by johanrovala on 10/11/15.
  */
 public class GameTest {
+
+    ArrayList arrayList;
+
+    @Before
+    public void setUpMock(){
+        arrayList = mock(ArrayList.class);
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldReturnIllegalArgumentException(){
@@ -23,11 +35,12 @@ public class GameTest {
         Player player = new Player();
         Game game = new Game("jazz", player);
         game.checkGuessAndRemoveIfInWord("j");
-        ArrayList<String> testList = new ArrayList<>();
-        testList.add("a");
-        testList.add("z");
-        testList.add("z");
-        assertEquals(testList, game.wordsLeft);
+        when(arrayList.size()).thenReturn(3);
+        arrayList.add("a");
+        arrayList.add("z");
+        arrayList.add("z");
+      //  System.out.println(arrayList.size());
+        assertEquals(arrayList.size(), game.wordsLeft.size());
     }
 
     @Test
