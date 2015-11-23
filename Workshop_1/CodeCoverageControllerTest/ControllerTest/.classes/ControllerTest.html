@@ -53,15 +53,15 @@
     100%
   </span>
   <span class="absValue">
-    (4/ 4)
+    (5/ 5)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.3%
+    94.1%
   </span>
   <span class="absValue">
-    (12/ 13)
+    (16/ 17)
   </span>
 </td>
 </tr>
@@ -109,22 +109,28 @@
 <b class="nc"><i>35</i>&nbsp;    }</b>
 <i>36</i>&nbsp;
 <i>37</i>&nbsp;    @Test
-<i>38</i>&nbsp;    public void shouldCallMethodInGameAndViewOnce(){
+<i>38</i>&nbsp;    public void shouldCallGamecheckGuessAndViewReturnUserGuessOnce() {
 <b class="fc"><i>39</i>&nbsp;        testController = new Controller(mockGame, mockPlayer, mockView);</b>
 <b class="fc"><i>40</i>&nbsp;        mockGame.checkGuessAndRemoveIfInWord(&quot;j&quot;);</b>
 <b class="fc"><i>41</i>&nbsp;        testController.getGuessedWordAndCallModel();</b>
 <b class="fc"><i>42</i>&nbsp;        verify(mockGame, times(1)).checkGuessAndRemoveIfInWord(&quot;j&quot;);</b>
 <b class="fc"><i>43</i>&nbsp;        verify(mockView, times(1)).returnUserGuess();</b>
 <b class="fc"><i>44</i>&nbsp;    }</b>
-<i>45</i>&nbsp;    
-<i>46</i>&nbsp;
-<i>47</i>&nbsp;}
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    @Test
+<i>47</i>&nbsp;    public void ShouldCalldIsGameOverOnce(){
+<b class="fc"><i>48</i>&nbsp;        testController = new Controller(mockGame, mockPlayer, mockView);</b>
+<b class="fc"><i>49</i>&nbsp;        testController.isGameOver();</b>
+<b class="fc"><i>50</i>&nbsp;        verify(mockGame, times(1)).isGameOver();</b>
+<b class="fc"><i>51</i>&nbsp;    }</b>
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-11-23 13:38</div>
+    <div style="float:right;">generated on 2015-11-23 13:42</div>
 </div>
 </body>
 </html>
