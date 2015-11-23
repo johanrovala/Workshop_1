@@ -47,7 +47,7 @@ public class ControllerTest {
     public void test(){
         testController = new Controller(mockGame, mockPlayer, mockView);
         testController.isGameOver();
-        verify(mockGame, times(2)).isGameOver();
+        verify(mockGame, times(1)).isGameOver();
     }
 
 }
