@@ -35,13 +35,19 @@ public class ControllerTest {
     }
 
     @Test
-    public void shouldCallMethodInGameAndViewOnce(){
+    public void shouldCallGamecheckGuessAndViewReturnUserGuessOnce() {
         testController = new Controller(mockGame, mockPlayer, mockView);
         mockGame.checkGuessAndRemoveIfInWord("j");
         testController.getGuessedWordAndCallModel();
         verify(mockGame, times(1)).checkGuessAndRemoveIfInWord("j");
         verify(mockView, times(1)).returnUserGuess();
     }
-    
+
+    @Test
+    public void test(){
+        testController = new Controller(mockGame, mockPlayer, mockView);
+        testController.isGameOver();
+        verify(mockGame, times(2)).isGameOver();
+    }
 
 }
