@@ -64,7 +64,7 @@ public class GameTest {
     public void shouldReturnTrueIfPlayerHasHadMoreThan10Tries(){
         Player player = new Player();
         Game game = new Game("jazz", player);
-        for (int i = 0; i < 9; i++){
+        for (int i = 0; i <= 10; i++){
             game.checkGuessAndRemoveIfInWord("h");
         }
         assertEquals(true, game.isGameOver());
