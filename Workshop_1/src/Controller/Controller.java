@@ -31,6 +31,8 @@ public class Controller {
         return m_game.isGameOver();
     }
 
-
+    public boolean Play(){
+        return false;
+    }
 
 }
