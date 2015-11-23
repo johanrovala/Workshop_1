@@ -51,7 +51,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void atLeastEverythingShouldBeCalledOnce(){
+    public void shouldVerifyMethodsImplementedInPlayMethod(){
         testController = new Controller(mockGame, mockPlayer, mockView);
         testController.Play();
 
