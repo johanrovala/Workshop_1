@@ -36,6 +36,7 @@ public class ControllerTest {
     @Test
     public void shouldCallMethodInGameAndViewOnce(){
         Controller controller = new Controller(mockGame, mockPlayer, mockView);
+        mockGame.checkGuessAndRemoveIfInWord("j");
         controller.getGuessedWordAndCallModel();
         verify(mockGame, times(1)).checkGuessAndRemoveIfInWord("j");
         verify(mockView, times(1)).returnUserGuess();
