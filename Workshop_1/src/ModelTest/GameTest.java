@@ -61,6 +61,7 @@ public class GameTest {
 
     @Test
     public void shouldReturnTrueIfPlayerHasHad10Tries(){
+        Player mockPlayer = mock(Player.class);
         Player player = new Player();
         Game game = new Game("jazz", player, new ArrayList());
         for (int i = 0; i <= 10; i++){
