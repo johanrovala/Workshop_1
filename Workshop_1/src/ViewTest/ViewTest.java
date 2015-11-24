@@ -88,9 +88,4 @@ public class ViewTest {
         view.getUserGuessInput(testData3);
         verify(printer, times(1)).println(view.returnUserGuess());
     }
-
-    @Test
-    public void shouldCheckUserInputForWord(){
-
-    }
 }

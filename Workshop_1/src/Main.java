@@ -16,8 +16,15 @@ public class Main {
         View view = new View(printer);
         Controller controller = new Controller(game, player, view);
 
-        while(!controller.isGameOver()){
+        view.displayWelcomeMessage();
+        view.normalGetUserMenuInput();
+        System.out.println(view.returnUserMenuChoice());
+        if(view.returnUserMenuChoice().equals("1")){
+            while(!controller.Play()){
 
+            }
+        }else{
+            System.out.println("Bye");
         }
 
     }

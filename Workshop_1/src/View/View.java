@@ -44,6 +44,17 @@ public class View {
          */
     }
 
+    public void normalGetUserMenuInput(){
+        Scanner scanner = new Scanner(System.in);
+        userMenuChoice = scanner.next();
+    }
+
+    public void normalGetUserGuess(){
+        Scanner scanner = new Scanner(System.in);
+        userGuess = scanner.next();
+    }
+
+
     public void setUserWord(String string){
         userWord = string;
     }
@@ -53,7 +64,8 @@ public class View {
     }
 
     public String returnUserMenuChoice(){
-        if(userMenuChoice == "1" || userMenuChoice == "2"){
+
+        if(userMenuChoice.equals("1") || userMenuChoice.equals("2")){
             return userMenuChoice;
         }
         return "sry";
