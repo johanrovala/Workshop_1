@@ -14,7 +14,6 @@ public class View {
 
     String userMenuChoice;
     String userGuess;
-    String userWord;
     Printer printer;
     // Merely for testing purposes
 
@@ -54,14 +53,6 @@ public class View {
         userGuess = scanner.next();
     }
 
-
-    public void setUserWord(String string){
-        userWord = string;
-    }
-
-    public String getUserWord(){
-        return userWord;
-    }
 
     public String returnUserMenuChoice(){
 

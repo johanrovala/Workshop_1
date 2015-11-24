@@ -13,6 +13,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.io.*;
+import java.util.ArrayList;
 
 
 /**
@@ -72,8 +73,9 @@ public class ViewTest {
 
     @Test
     public void shouldReturnTheNumberOfWordsThatAreLeftWithEmptyUnderscores(){
+
         Player player = new Player();
-        Game game = new Game("jazz", player);
+        Game game = new Game("jazz", player, new ArrayList());
         View view = new View(printer);
         game.checkGuessAndRemoveIfInWord("j");
         game.checkGuessAndRemoveIfInWord("a");

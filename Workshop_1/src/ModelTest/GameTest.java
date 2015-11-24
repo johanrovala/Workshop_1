@@ -26,13 +26,13 @@ public class GameTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldReturnIllegalArgumentException(){
-        new Model.Game(null, null);
+        new Model.Game(null, null, null);
     }
 
     @Test
     public void shouldRemoveLetterFromListInGameClass(){
         Player player = new Player();
-        Game game = new Game("jazz", player);
+        Game game = new Game("jazz", player, new ArrayList());
         game.checkGuessAndRemoveIfInWord("j");
         when(arrayList.size()).thenReturn(3);
         arrayList.add("a");
@@ -44,7 +44,7 @@ public class GameTest {
     @Test
     public void shouldReturnFalseIfGameIsNotOver(){
         Player player = new Player();
-        Game game = new Game("jazz", player);
+        Game game = new Game("jazz", player, new ArrayList());
         game.checkGuessAndRemoveIfInWord("j");
         assertEquals(false, game.isGameOver());
     }
@@ -52,7 +52,7 @@ public class GameTest {
     @Test
     public void shouldReturnTrueIfGameIsOver(){
         Player player = new Player();
-        Game game = new Game("jazz", player);
+        Game game = new Game("jazz", player, new ArrayList());
         game.checkGuessAndRemoveIfInWord("j");
         game.checkGuessAndRemoveIfInWord("a");
         game.checkGuessAndRemoveIfInWord("z");
@@ -62,7 +62,7 @@ public class GameTest {
     @Test
     public void shouldReturnTrueIfPlayerHasHad10Tries(){
         Player player = new Player();
-        Game game = new Game("jazz", player);
+        Game game = new Game("jazz", player, new ArrayList());
         for (int i = 0; i <= 10; i++){
             game.checkGuessAndRemoveIfInWord("h");
         }
