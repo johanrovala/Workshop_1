@@ -41,13 +41,6 @@ public class Game {
      * Setters in order to mock the class and still get the work made in constructor
      */
 
-    public void setWord(String word){
-        this.word = word;
-        for (int i = 0; i < word.length(); i++){
-            wordsLeft.add(Character.toString(word.charAt(i)));
-        }
-    }
-
     public void setPlayer(Player player){
         test_player = player;
     }

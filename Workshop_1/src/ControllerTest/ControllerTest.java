@@ -23,7 +23,7 @@ public class ControllerTest {
     Controller testController;
 
     @Before
-    public void setUpShit(){
+    public void setUpMockClasses(){
         mockPlayer = mock(Player.class);
         mockGame = mock(Game.class);
         mockView = mock(View.class);
